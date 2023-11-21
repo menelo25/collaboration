@@ -45,19 +45,16 @@ La bibliothèque gère un grand nombre de livres usagés, dont beaucoup ont ét�
 
 ```mermaid
 sequenceDiagram
-participant Bibliothécaire as B
-participant Système as S
 
-    B->>S: Saisir ISBN ou Titre
+    Utilisateur->>+Système: Saisir ISBN ou Titre
     alt ISBN fourni
-
-        S->>B: Vérifier Existence ISBN
+        Système->>+Utilisateur: Vérifier Existence ISBN
         alt ISBN invalide ou existant
-            S-->>B: Afficher Messages d'Erreur
+            Système-->>-Utilisateur: Afficher Messages d'Erreur
         else
-            B->>S: Fournir Détails sur Livres
-            B-->>S: Ajouter Livre sans ISBN
+            Utilisateur->>+Système: Fournir Détails sur Livres
+            Utilisateur-->>-Système: Ajouter Livre sans ISBN
         end
-
     end
+
 ```
