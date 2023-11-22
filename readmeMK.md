@@ -58,3 +58,34 @@ sequenceDiagram
     end
 
 ```
+
+```mermaid
+sequenceDiagram
+  graph TD
+    A[Acteur Utilisateur] -->|Ajouter Livre| B(Ajouter Livre)
+    A -->|Consulter Livre| C(Consulter Livre)
+    A -->|Mettre à Jour Livre| D(Mettre à Jour Livre)
+    A -->|Supprimer Livre| E(Supprimer Livre)
+    B -->|Fournir Détails Livre| F(Fournir Détails Livre)
+    F -->|Valider ISBN| G(Valider ISBN)
+    F -->|Valider Titre| H(Valider Titre)
+    B -->|Vérifier Existence| I(Vérifier Existence)
+    I -->|Livre Existe| J(Informations Livre)
+    I -->|Livre n'Existe pas| K(Ajouter Livre)
+    C -->|Rechercher par Titre| L(Liste Livres)
+    C -->|Rechercher par Auteur| L
+    C -->|Rechercher par Année| L
+    D -->|Sélectionner Livre| M(Détails Livre)
+    D -->|Mettre à Jour Détails| N(Mettre à Jour Livre)
+    M -->|Valider ISBN| O(Valider ISBN)
+    M -->|Valider Titre| P(Valider Titre)
+    N -->|Vérifier Existence| Q(Vérifier Existence)
+    Q -->|Livre Existe| R(Informations Livre)
+    Q -->|Livre n'Existe pas| S(Mettre à Jour Livre)
+    E -->|Sélectionner Livre| T(Détails Livre)
+    T -->|Confirmer Suppression| U(Supprimer Livre)
+    U -->|Livre Supprimé| V(Confirmation Suppression)
+
+    end
+
+```
